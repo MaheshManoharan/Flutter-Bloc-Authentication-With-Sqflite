@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_doctune_final/components/rounded_button.dart';
+import 'package:flutter_doctune_final/screens/login/login_screen.dart';
 import 'package:flutter_doctune_final/screens/register/register_screen.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../constants.dart';
@@ -34,7 +35,7 @@ class Body extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) {
-                    //  return LoginScreen();
+                    return LoginScreen();
                   }),
                 );
               },

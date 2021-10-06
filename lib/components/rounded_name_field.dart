@@ -7,18 +7,25 @@ class RoundedNameField extends StatelessWidget {
   final String hintText;
   final IconData icon;
   final ValueChanged<String> onChanged;
-  
+  final Function vaildator;
+  final TextEditingController textEditingController;
   const RoundedNameField({
     Key key,
     this.hintText,
     this.icon = Icons.person,
     this.onChanged,
+    this.vaildator,
+    this.textEditingController,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFieldContainer(
-      child: TextField(
+      child: TextFormField(
+        textCapitalization: TextCapitalization.sentences,
+        keyboardType: TextInputType.name,
+        controller: textEditingController,
+        validator: vaildator,
         onChanged: onChanged,
         cursorColor: kPrimaryColor,
         decoration: InputDecoration(
